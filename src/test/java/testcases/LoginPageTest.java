@@ -1,5 +1,9 @@
 package testcases;
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Sleeper;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,6 +31,7 @@ public class LoginPageTest extends TestBase{
 		testBase.initialization();
 		System.out.println("inside setup+1");
 		loginPage= new LoginPage();
+		
 				
 	}
 	
@@ -34,11 +39,16 @@ public class LoginPageTest extends TestBase{
 	public void loginJinzai()
 	{
 			
-		homePage= loginPage.loginJinzai();
-				
+		loginPage.loginJinzai();
+			
+		homePage=new HomePage();
+		homePage.clickHome();
+		homePage.verifypagetitle();	
+		
 	}
 	@AfterMethod
 	public void endtest() {
+	
 		driver.close();
 	}
 }
