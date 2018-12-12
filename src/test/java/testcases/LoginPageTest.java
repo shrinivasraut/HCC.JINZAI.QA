@@ -49,6 +49,6 @@ public class LoginPageTest extends TestBase{
 	@AfterMethod
 	public void endtest() {
 	
-		driver.close();
+		//driver.close();
 	}
 }

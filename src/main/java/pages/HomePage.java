@@ -3,6 +3,7 @@ package pages;
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +28,13 @@ public class HomePage extends TestBase{
 		//Home Click
 		@FindBy(xpath="//a[@id='pt1:_UIShome']")
 		@CacheLookup
-		WebElement Homeclick;
+		public WebElement Homeclick;
+		
+	//absence Management
+		//@FindBy(xpath="//a[text()='Absence Management']")
+		@FindBy(xpath="//div[@title='Absence Management']")
+		@CacheLookup
+		WebElement absenceManagement;
 		
 		public void clickHome() {
 			System.out.println("FUnction executed");
@@ -38,5 +45,11 @@ public class HomePage extends TestBase{
 		
 		public void verifypagetitle() {
 			assertEquals(HomePageTitle.getText(),"Welcome to the Jinzai and HiQ Portal!");
+		}
+		
+		public void openAbsenceManagement() {
+			System.out.println("in function openAbsence Management");
+			driver.findElement(By.xpath("//div[@title='Absence Management']")).click();
+	//		absenceManagement.click();	
 		}
 }
