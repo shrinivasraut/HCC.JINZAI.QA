@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="extentreportlistner.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <exclude name="System,Smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testcases.ExcelTest">
+      <class name="testcases.AbsenceManagementTest">
         <methods>
-          <include name="TestExcel"/>
+          <include name="execute"/>
+          <include name="endTest"/>
+          <include name="initiate"/>
         </methods>
-      </class> <!-- testcases.ExcelTest -->
+      </class> <!-- testcases.AbsenceManagementTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

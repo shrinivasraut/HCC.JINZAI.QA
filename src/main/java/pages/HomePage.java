@@ -37,10 +37,10 @@ public class HomePage extends TestBase{
 		WebElement absenceManagement;
 		
 		public void clickHome() {
-			System.out.println("FUnction executed");
+			
 		//driver.findElement(By.xpath("//a[@id='pt1:_UIShome']")).click();
 		Homeclick.click();
-			
+		System.out.println("FUnction executed");
 		}
 		
 		public void verifypagetitle() {

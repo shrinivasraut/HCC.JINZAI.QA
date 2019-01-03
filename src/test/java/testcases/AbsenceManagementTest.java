@@ -45,8 +45,8 @@ public class AbsenceManagementTest extends TestBase{
 //	homePage.openAbsenceManagement();
 	}
 	
-	@SuppressWarnings("null")
-	@Test
+	
+	@Test (groups = { "System"})
 	public void execute()
 	{
 		System.out.println("//about to open Absence management");
@@ -65,7 +65,7 @@ public class AbsenceManagementTest extends TestBase{
 	
 	@AfterTest
 	public void endTest() {
-		
+		driver.close();
 	}
 	
 }

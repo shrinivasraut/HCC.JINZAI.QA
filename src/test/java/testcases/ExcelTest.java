@@ -8,7 +8,7 @@ import util.TestExcelReading;
 public class ExcelTest extends TestBase{
 	TestExcelReading testExcel;
 	
-	@Test
+	@Test  (groups = { "System"})
 	public void TestExcel() {
 		testExcel=new TestExcelReading();
 		System.out.println("Read All Excel Content");
@@ -16,13 +16,17 @@ public class ExcelTest extends TestBase{
 		System.out.println("Read Excel cell");
 		testExcel.readExcel("LoginData", 2, 2);
 		
-		System.out.println("Excel Column COunt="+testExcel.CountExcelColumn("LoginData"));
-		System.out.println("Excel Row COunt="+testExcel.CountExcelRow("LoginData"));
-		
-		
 		
 		
 	}
 	
+	@Test  (groups = { "Smoke" })
+	public void TestExcel1() {
+		testExcel=new TestExcelReading();
+		System.out.println("Excel Column COunt="+testExcel.CountExcelColumn("LoginData"));
+		System.out.println("Excel Row COunt="+testExcel.CountExcelRow("LoginData"));
+				
+		
+	}
 	
 }
